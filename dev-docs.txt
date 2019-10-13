@@ -1,0 +1,9 @@
+// Dir scripts
+cd /opt/kafka
+
+kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test
+
+kafka-console-producer.sh --broker-list localhost:9092 --topic test
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test
+kafka-console-consumer.sh --bootstrap-server 192.168.99.100:9092 --topic test
